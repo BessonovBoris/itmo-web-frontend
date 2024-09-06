@@ -1,2 +1,5 @@
-# itmo-web-frontend
-ITMO web frontend course
+# Bessonov Boris - M3314
+
+**ITMO web frontend course**
+
+Topic: 'Social network'
