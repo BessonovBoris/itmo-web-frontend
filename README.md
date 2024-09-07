@@ -4,4 +4,4 @@
 
 Topic: 'Social network'
 
-![Model](https://github.com/BessonovBoris/itmo-web-frontend/tree/lab-1/static/model-image.png)
+![](./static/layout.png)
