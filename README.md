@@ -1,7 +1,8 @@
 # Bessonov Boris - M3314
 
-**ITMO web frontend course**
+### ITMO web frontend course
 
-Topic: 'Social network'
+**Topic:** 'Social network'
 
+**Layout:**
 ![](./static/layout.png)
