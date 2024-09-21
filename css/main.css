@@ -1,0 +1,57 @@
+* {
+	font-family: "Noto Serif", serif;
+}
+
+header,
+footer {
+	background-color: #f4e2de;
+}
+
+footer {
+	text-align: center;
+	font-size: 24px;
+	text-transform: capitalize;
+	text-decoration: underline;
+}
+
+h1 {
+	text-align: center;
+}
+
+.parable_types img {
+	filter: drop-shadow(10px 10px 10px #4444dd);
+	width: 10%;
+}
+
+.parable_types {
+	text-align: center;
+	margin-bottom: 5%;
+}
+
+.parable_types li {
+	display: inline;
+	list-style-type: none;
+	margin: 4%;
+}
+
+.parable_of_day {
+	line-height: 10px;
+	text-align: center;
+
+	margin-bottom: 5%;
+}
+
+.code_of_day {
+	text-align: center;
+}
+
+.code_of_day pre {
+	margin-top: 0%;
+	margin-bottom: 5%;
+}
+
+code {
+	white-space: pre;
+	font-weight: 600;
+	font-family: monospace;
+}
