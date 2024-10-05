@@ -16,11 +16,29 @@
 		<title>притчи сообщества</title>
 	</head>
 	<body class="page">
+		<script>
+			function updateHeaderSize() {
+				const parent = document.getElementById("parent");
+				const header = document.getElementById("header");
+
+				// Получаем координаты и размеры родителя
+				const parentRect = parent.getBoundingClientRect();
+
+				// Задаем фиксированному элементу ширину и позицию родителя
+				header.style.width = parentRect.width - 10 + "px";
+				header.style.left = parentRect.left + "px";
+			}
+
+			// Обновляем размеры при загрузке страницы и при изменении размеров окна
+			window.addEventListener("resize", updateHeaderSize);
+			window.addEventListener("load", updateHeaderSize);
+		</script>
+
 		<div class="page__top">
 			<div class="page__left-advert">Рекламный баннер левый</div>
 
-			<div class="page__container">
-				<header class="page__header">
+			<div class="page__container" id="parent">
+				<header class="page__header" id="header">
 					<div class="header__title">
 						<img
 							class="title__ikon"

@@ -47,12 +47,12 @@
 }
 
 .page__header {
+	position: fixed;
 	background-color: #ffcb9a;
 	margin-bottom: 30px;
-	position: fixed;
+	padding: 0 5px 0 5px;
 	justify-content: space-around;
 	top: 1%;
-	width: 69%; /* Исправить */
 	border-radius: 20px 20px 0 0;
 	z-index: 1;
 }
