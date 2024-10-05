@@ -2,8 +2,87 @@
 	font-family: "Noto Serif", serif;
 }
 
+.page {
+	background-color: #e6fdff;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+.page__top {
+	display: flex;
+	justify-content: center;
+	flex-grow: 1;
+}
+
+.page__left-advert {
+	padding-right: 10px;
+}
+
+.page__right-advert {
+	padding-left: 10px;
+}
+
+@media screen and (width < 900px) {
+	.page__left-advert {
+		display: none;
+	}
+
+	.page__right-advert {
+		display: none;
+	}
+}
+
+.page__container {
+	width: 80%;
+	height: 90%;
+	padding-top: 100px;
+	max-width: 1600px;
+	background-color: #f4e2de;
+	border-radius: 20px;
+	box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.1);
+	overflow: hidden;
+	text-align: center;
+}
+
 .page__header {
 	background-color: #ffcb9a;
+	margin-bottom: 30px;
+	position: fixed;
+	justify-content: space-around;
+	top: 1%;
+	width: 69%; /* Исправить */
+	border-radius: 20px 20px 0 0;
+	z-index: 1;
+}
+
+.header__title {
+	padding: 1% 25% 1% 25%;
+	box-sizing: border-box;
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+}
+
+.header__menu {
+	display: flex;
+	justify-content: space-around;
+	margin-bottom: 10px;
+}
+
+@media screen and (width >= 800px) {
+	.title__ikon {
+		width: 10%;
+		height: 10%;
+	}
+}
+
+@media screen and (width < 800px) {
+	.title__ikon {
+		width: 20%;
+		height: 20%;
+	}
 }
 
 .footer {
@@ -11,31 +90,4 @@
 	font-size: 24px;
 	text-transform: capitalize;
 	text-decoration: underline;
-}
-
-.heading {
-	text-align: center;
-}
-
-@media (max-width: 800px) {
-	.page__container {
-		flex-wrap: nowrap;
-	}
-
-	.sidebar {
-		width: 40%;
-	}
-
-	.content {
-		width: 80%;
-	}
-
-	.menu__link {
-		font-size: 16px;
-		padding: 10px;
-	}
-
-	.search-bar-container {
-		width: 70%;
-	}
 }
