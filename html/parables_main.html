@@ -6,6 +6,7 @@
 		<meta name="keywords" content="social network, parable, community" />
 		<meta name="description" content="cummunitys parables, fun" />
 		<link href="../css/parables_main.css" rel="stylesheet" />
+		<link href="../css/table.css" rel="stylesheet" />
 
 		<link
 			href="https://fonts.googleapis.com/css2?family=Jacquarda+Bastarda+9&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Noto+Serif:ital,wght@0,100..900;1,100..900&display=swap"
@@ -15,65 +16,89 @@
 		<title>притчи сообщества</title>
 	</head>
 	<body class="page">
-		<div class="page__container">
-			<header class="page__header">
-				<div class="header__main-ikon">
-					<img src="../static/main-ikon.png" height="5%" width="5%" />
-					<article class="main-ikon__name">Название сайта</article>
-				</div>
-				<div class="header__menu">
-					<span>Главная страница</span>
-					<span>Притчи сообщества</span>
-					<span>Ваша страница</span>
-				</div>
-			</header>
+		<script>
+			function updateHeaderSize() {
+				const parent = document.getElementById("parent");
+				const header = document.getElementById("header");
 
-			<main>
-				<h1 class="heading">Притчи</h1>
+				// Получаем координаты и размеры родителя
+				const parentRect = parent.getBoundingClientRect();
 
-				<div class="parable-types">
-					<h4><nav>Типы притч</nav></h4>
-					<ul>
-						<li class="parable-types__type">
-							Юморески
-							<img
-								src="../static/humor_pritchejpg.jpg"
-								class="parable-types__img"
-							/>
-						</li>
+				// Задаем фиксированному элементу ширину и позицию родителя
+				header.style.width = parentRect.width - 10 + "px";
+				header.style.left = parentRect.left + "px";
+			}
 
-						<li class="parable-types__type">
-							Жизненные
-							<img
-								src="../static/life_pritche.jpg"
-								class="parable-types__img"
-							/>
-						</li>
+			// Обновляем размеры при загрузке страницы и при изменении размеров окна
+			window.addEventListener("resize", updateHeaderSize);
+			window.addEventListener("load", updateHeaderSize);
+		</script>
 
-						<li class="parable-types__type">
-							Придуманные
-							<img
-								src="../static/imagine_pritche.jpg"
-								class="parable-types__img"
-							/>
-						</li>
-					</ul>
-				</div>
+		<div class="page__top">
+			<div class="page__left-advert">Рекламный баннер левый</div>
 
-				<div class="parable-of-day">
-					<h4><nav>Притча дня</nav></h4>
+			<div class="page__container" id="parent">
+				<header class="page__header" id="header">
+					<div class="header__title">
+						<img
+							class="title__ikon"
+							src="../static/main-ikon.png"
+						/>
+						<article class="title__name">Название сайта</article>
+					</div>
+					<div class="header__menu">
+						<span>Главная страница</span>
+						<span>Притчи сообщества</span>
+						<span>Ваша страница</span>
+					</div>
+				</header>
 
-					<blockquote class="parable-of-day__quote">
-						<p>C без ++, как <strong>ампутация</strong></p>
-						<cite>Стэтхэм</cite>
-					</blockquote>
-				</div>
+				<main>
+					<h1 class="heading">Притчи</h1>
 
-				<div class="code-of-day">
-					<h4><nav>Код дня</nav></h4>
-					<pre
-						class="code-of-day__pre"
-					><code class="code-of-day__code">
+					<div class="parable-types">
+						<h4><nav>Типы притч</nav></h4>
+						<ul>
+							<li class="parable-types__type">
+								Юморески
+								<img
+									src="../static/humor_pritchejpg.jpg"
+									class="parable-types__img"
+								/>
+							</li>
+
+							<li class="parable-types__type">
+								Жизненные
+								<img
+									src="../static/life_pritche.jpg"
+									class="parable-types__img"
+								/>
+							</li>
+
+							<li class="parable-types__type">
+								Придуманные
+								<img
+									src="../static/imagine_pritche.jpg"
+									class="parable-types__img"
+								/>
+							</li>
+						</ul>
+					</div>
+
+					<div class="parable-of-day">
+						<h4><nav>Притча дня</nav></h4>
+
+						<blockquote class="parable-of-day__quote">
+							<p>C без ++, как <strong>ампутация</strong></p>
+							<cite>Стэтхэм</cite>
+						</blockquote>
+					</div>
+
+					<div class="code-of-day">
+						<h4><nav>Код дня</nav></h4>
+						<pre
+							class="code-of-day__pre"
+						><code class="code-of-day__code">
 bool to_be = true;
 if (to_be) {
 	return life;
@@ -82,8 +107,43 @@ if (to_be) {
 return dead;
 				</code>
 			</pre>
-				</div>
-			</main>
+					</div>
+
+					<div class="parables-table">
+						<div class="parables-table__header">Автор</div>
+						<div class="parables-table__header">Оценка</div>
+						<div class="parables-table__header">Год публикации</div>
+
+						<div class="parables-table__parable-row">
+							<div class="parable-row__cell">Яковлев</div>
+							<div class="parable-row__cell">9/10</div>
+							<div class="parable-row__cell">2025</div>
+						</div>
+
+						<div class="parables-table__parable-row">
+							<div class="parable-row__cell">
+								PVT HWT Амброзиус Кусто
+							</div>
+							<div class="parable-row__cell">11/10</div>
+							<div class="parable-row__cell">42K</div>
+						</div>
+
+						<div class="parables-table__parable-row">
+							<div class="parable-row__cell">LTV Гистрогус</div>
+							<div class="parable-row__cell">1/10</div>
+							<div class="parable-row__cell">1932</div>
+						</div>
+
+						<div class="parables-table__parable-row">
+							<div class="parable-row__cell">CPT Dr. Livsey</div>
+							<div class="parable-row__cell">100/10</div>
+							<div class="parable-row__cell">932</div>
+						</div>
+					</div>
+				</main>
+			</div>
+
+			<div class="page__right-advert">Рекламный баннер правый</div>
 		</div>
 
 		<footer class="footer">тут могла бы быть ваша реклама</footer>

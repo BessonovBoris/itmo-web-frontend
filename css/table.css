@@ -1,0 +1,29 @@
+.parables-table {
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	margin: 0 40px 40px 40px;
+	border-bottom: 2px solid #f4e2d2;
+}
+
+.parables-table__header {
+	background-color: #025259;
+	color: white;
+	font-weight: bold;
+	text-align: left;
+	padding: 5px;
+}
+
+.parables-table__parable-row {
+	display: contents;
+}
+
+.parable-row__cell {
+	padding: 16px;
+	text-align: left;
+	background-color: #f29325;
+	border-bottom: 10px solid #f4e2d2;
+}
+
+.parables-table__parable-row:nth-child(even) .parable-row__cell {
+	background-color: #d94f04;
+}
