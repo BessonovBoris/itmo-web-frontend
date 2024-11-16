@@ -4,7 +4,6 @@
 
 .page {
 	background-color: #e6fdff;
-	display: flex;
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
@@ -13,15 +12,16 @@
 .page__top {
 	display: flex;
 	justify-content: center;
-	flex-grow: 1;
 }
 
 .page__left-advert {
 	padding-right: 10px;
+	max-width: 10%;
 }
 
 .page__right-advert {
 	padding-left: 10px;
+	max-width: 10%;
 }
 
 @media screen and (width < 900px) {
@@ -35,10 +35,11 @@
 }
 
 .page__container {
+	flex-grow: 1;
+	max-width: 1600px;
 	width: 80%;
 	height: 90%;
 	padding-top: 100px;
-	max-width: 1600px;
 	background-color: #f4e2de;
 	border-radius: 20px;
 	box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.1);
@@ -51,7 +52,6 @@
 	background-color: #ffcb9a;
 	margin-bottom: 30px;
 	padding: 0 5px 0 5px;
-	justify-content: space-around;
 	top: 1%;
 	border-radius: 20px 20px 0 0;
 	z-index: 1;
@@ -71,6 +71,25 @@
 	margin-bottom: 10px;
 }
 
+.menu__link {
+    text-decoration: none;
+    font-size: 20px;
+    color: #007172;
+    font-weight: bold;
+}
+
+.menu__link.active {
+    color: #D94F04;
+}
+
+.menu__link:hover {
+    color: #025259;
+}
+
+.heading {
+	margin-top: 90px;
+}
+
 @media screen and (width >= 800px) {
 	.title__ikon {
 		width: 10%;
@@ -86,8 +105,17 @@
 }
 
 .footer {
-	text-align: center;
-	font-size: 24px;
-	text-transform: capitalize;
-	text-decoration: underline;
+    width: 100%;
+    color: #7f8c8d;
+    text-align: center;
+    padding: 10px;
+    position: relative;
+}
+
+.footer__text {
+    margin: 0;
+}
+
+.footer__load-time {
+    margin: 0;
 }

@@ -4,10 +4,10 @@
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<meta name="keywords" content="social network, parable, community" />
-		<meta name="description" content="cummunitys parables, fun" />
+		<meta name="description" content="community's parables, fun" />
+		
 		<link href="../css/parables_main.css" rel="stylesheet" />
 		<link href="../css/table.css" rel="stylesheet" />
-
 		<link
 			href="https://fonts.googleapis.com/css2?family=Jacquarda+Bastarda+9&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Noto+Serif:ital,wght@0,100..900;1,100..900&display=swap"
 			rel="stylesheet"
@@ -16,24 +16,6 @@
 		<title>притчи сообщества</title>
 	</head>
 	<body class="page">
-		<script>
-			function updateHeaderSize() {
-				const parent = document.getElementById("parent");
-				const header = document.getElementById("header");
-
-				// Получаем координаты и размеры родителя
-				const parentRect = parent.getBoundingClientRect();
-
-				// Задаем фиксированному элементу ширину и позицию родителя
-				header.style.width = parentRect.width - 10 + "px";
-				header.style.left = parentRect.left + "px";
-			}
-
-			// Обновляем размеры при загрузке страницы и при изменении размеров окна
-			window.addEventListener("resize", updateHeaderSize);
-			window.addEventListener("load", updateHeaderSize);
-		</script>
-
 		<div class="page__top">
 			<div class="page__left-advert">Рекламный баннер левый</div>
 
@@ -47,9 +29,9 @@
 						<article class="title__name">Название сайта</article>
 					</div>
 					<div class="header__menu">
-						<span>Главная страница</span>
-						<span>Притчи сообщества</span>
-						<span>Ваша страница</span>
+						<div class="menu__item"><a href="parables_main.html" class="menu__link" id="menu_parables_main">Главная страница</a></div>
+						<div class="menu__item"><a href="community_parables.html" class="menu__link" id="menu_community_parables">Притчи сообщества</a></div>
+						<div class="menu__item"><a href="your_page.html" class="menu__link" id="menu_your_page">Ваша страница</a></div>
 					</div>
 				</header>
 
@@ -146,6 +128,13 @@ return dead;
 			<div class="page__right-advert">Рекламный баннер правый</div>
 		</div>
 
-		<footer class="footer">тут могла бы быть ваша реклама</footer>
+		<footer class="footer">
+			<p class="footer__text">&copy; 2024 Parables</p>
+			<p class="footer__load-time" id="load-time"></p>
+		</footer>
+
+		<script src="../js/time-load.js"></script>
+		<script src="../js/header-width-control.js"></script>
+		<script src="../js/change-page.js"></script>
 	</body>
 </html>
