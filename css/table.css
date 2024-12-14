@@ -129,3 +129,48 @@
 	display: flex;
 	flex-direction: column;
 }
+
+.fixed {
+	position: fixed;
+}
+
+.top-20 {
+	top: 20px;
+}
+
+.right-0 {
+	right: 0;
+}
+
+.p-4 {
+	padding: 1rem;
+}
+
+.z-50 {
+	z-index: 50;
+}
+
+.toast {
+	color: white;
+	margin: 10px 0;
+}
+
+.toast-container {
+	position: fixed;
+	top: 20px;
+	right: 20px;
+	z-index: 9999;
+}
+
+.toast-close-button {
+	display: flex;
+	margin-left: auto;
+}
+
+.toast-error {
+	background-color: red;
+}
+
+.toast-success {
+	background-color: green;
+}

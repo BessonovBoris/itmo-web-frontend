@@ -3,7 +3,7 @@ document.addEventListener("DOMContentLoaded", () => {
 		closeButton: true,
 		progressBar: true,
 		positionClass: "toast-top-right",
-		timeOut: "1000",
+		timeOut: "100000",
 	};
 
 	const clearLocalStorageButton = document.getElementById(
@@ -140,7 +140,6 @@ document.addEventListener("DOMContentLoaded", () => {
 				return response.json();
 			})
 			.then((data) => {
-				removePreloader();
 				const storedParables =
 					JSON.parse(localStorage.getItem("comments")) || [];
 
@@ -175,9 +174,11 @@ document.addEventListener("DOMContentLoaded", () => {
 				);
 			})
 			.catch((error) => {
-				removePreloader();
 				toastr.error("⚠ Smth went wrong", "error");
 				console.error("Error fetching parables:", error);
+			})
+			.finally(() => {
+				removePreloader();
 			});
 	}
 
