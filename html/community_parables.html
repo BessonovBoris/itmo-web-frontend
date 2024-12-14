@@ -5,7 +5,7 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<meta name="keywords" content="social network, parable, community" />
 		<meta name="description" content="community's parables, fun" />
-		
+
 		<link href="../css/parables_main.css" rel="stylesheet" />
 		<link href="../css/table.css" rel="stylesheet" />
 		<link
@@ -29,15 +29,98 @@
 						<article class="title__name">Название сайта</article>
 					</div>
 					<div class="header__menu">
-						<div class="menu__item"><a href="parables_main.html" class="menu__link" id="menu_parables_main">Главная страница</a></div>
-						<div class="menu__item"><a href="community_parables.html" class="menu__link" id="menu_community_parables">Притчи сообщества</a></div>
-						<div class="menu__item"><a href="your_page.html" class="menu__link" id="menu_your_page">Ваша страница</a></div>
+						<div class="menu__item">
+							<a
+								href="parables_main.html"
+								class="menu__link"
+								id="menu_parables_main"
+								>Главная страница</a
+							>
+						</div>
+						<div class="menu__item">
+							<a
+								href="community_parables.html"
+								class="menu__link"
+								id="menu_community_parables"
+								>Притчи сообщества</a
+							>
+						</div>
+						<div class="menu__item">
+							<a
+								href="your_page.html"
+								class="menu__link"
+								id="menu_your_page"
+								>Ваша страница</a
+							>
+						</div>
 					</div>
 				</header>
 
 				<main>
 					<h1 class="heading">Притчи</h1>
 
+					<div class="add-parable">
+						<form class="add-parable__form" id="parable-form">
+							<div class="form-group">
+								<label for="titleP">Title:</label>
+								<input
+									type="text"
+									name="titleP"
+									id="titleP"
+									placeholder="Enter parable's title"
+								/>
+							</div>
+							<div class="form-group">
+								<label for="email">Email:</label>
+								<input
+									type="text"
+									name="email"
+									id="email"
+									placeholder="Enter your email address"
+								/>
+							</div>
+							<div class="form-group">
+								<label for="parable">Your parable:</label>
+								<input
+									type="text"
+									name="parable-text"
+									id="parable"
+									placeholder="Enter your parable"
+								/>
+							</div>
+							<div class="parable-form_buttons">
+								<button
+									type="submit"
+									class="btn btn-primary"
+									id="submit-button"
+								>
+									Submit Parable
+								</button>
+								<button
+									type="button"
+									class="btn btn-primary"
+									id="load-button"
+								>
+									Load Parables
+								</button>
+								<button
+									class="btn btn-primary"
+									id="clear-local-storage-btn"
+								>
+									Clear Local Storage
+								</button>
+							</div>
+						</form>
+					</div>
+
+					<div class="parables-container">
+						<div
+							id="toast-container"
+							class="fixed top-20 right-0 p-4 space-y-2 z-50"
+						></div>
+					</div>
+
+					<!-- <div class="preloader preloader-animation"></div> -->
 				</main>
 			</div>
 
@@ -52,5 +135,6 @@
 		<script src="../js/time-load.js"></script>
 		<script src="../js/header-width-control.js"></script>
 		<script src="../js/change-page.js"></script>
+		<script src="../js/form-parable.js"></script>
 	</body>
 </html>

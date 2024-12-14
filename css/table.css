@@ -27,3 +27,105 @@
 .parables-table__parable-row:nth-child(even) .parable-row__cell {
 	background-color: #d94f04;
 }
+
+.add-parable__form {
+	display: flex;
+	flex-direction: column;
+	gap: 1rem;
+	width: 100%;
+}
+
+.form-group {
+	display: flex;
+	margin: 2px;
+}
+
+#titleP,
+#email,
+#parable,
+#parable {
+	margin-left: 10px;
+	border: 3px solid #025259;
+	border-radius: 5px;
+	padding-left: 5px;
+}
+
+.parables-container {
+	margin-top: 2rem;
+	display: flex;
+	flex-wrap: wrap;
+}
+
+.parable {
+	margin: 10px;
+	padding: 5px;
+	max-width: 330px;
+	border: 3px solid #025259;
+	border-radius: 10px;
+}
+
+.parable h3 {
+	color: #025259;
+	font-size: larger;
+}
+
+.parable a {
+	color: lightseagreen;
+}
+
+.parable p {
+	margin-top: 0.5rem;
+}
+
+.comment__delete-btn {
+	display: flex;
+	border: 1px solid indianred;
+	border-radius: 5px;
+	background-color: rgb(202 71 52);
+	color: white;
+	padding: 3px;
+	margin: 2px;
+}
+.comment__delete-btn:hover {
+	opacity: 0.8;
+}
+
+.add-parable__form {
+	caret-color: #025259;
+}
+
+.preloader {
+	width: 50px;
+	height: 50px;
+	border: 8px solid #f3f3f3;
+	border-top: 8px solid #025259;
+	border-radius: 50%;
+	animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+	0% {
+		transform: rotate(0deg);
+	}
+	100% {
+		transform: rotate(360deg);
+	}
+}
+
+/*Сброс LocalStorage*/
+
+#clear-local-storage-btn {
+	background-color: red;
+	color: white;
+}
+
+#load-button,
+#submit-button,
+#clear-local-storage-btn {
+	width: 240px;
+	margin: 5px 0 0 0;
+}
+.parable-form_buttons {
+	display: flex;
+	flex-direction: column;
+}
