@@ -1,4 +1,11 @@
 document.addEventListener("DOMContentLoaded", () => {
+	toastr.options = {
+		closeButton: true,
+		progressBar: true,
+		positionClass: "toast-top-right",
+		timeOut: "1000",
+	};
+
 	const clearLocalStorageButton = document.getElementById(
 		"clear-local-storage-btn"
 	);
@@ -11,25 +18,6 @@ document.addEventListener("DOMContentLoaded", () => {
 		alert("Local storage очищен!");
 	});
 
-	function showToast(message, type = "error") {
-		const toast = document.createElement("div");
-		toast.className = `
-        ${type === "success" ? "bg-green-500" : "bg-red-500"}
-        text-white p-4 rounded-lg shadow-lg opacity-90 transition duration-300 mb-4
-    `;
-		toast.innerText = message;
-
-		const toastContainer = document.getElementById("toast-container");
-		toastContainer.appendChild(toast);
-
-		setTimeout(() => {
-			toast.classList.add("opacity-0");
-			setTimeout(() => {
-				toast.remove();
-			}, 100);
-		}, 1000);
-	}
-
 	if (parableForm) {
 		parableForm.addEventListener("submit", (event) => {
 			event.preventDefault();
@@ -39,7 +27,7 @@ document.addEventListener("DOMContentLoaded", () => {
 			const parableText = event.target["parable-text"].value.trim();
 
 			if (!title || !email || !parableText) {
-				showToast("⚠ Пожалуйста, заполните все поля.", "error");
+				toastr.error("⚠ Пожалуйста, заполните все поля.", "error");
 				return;
 			}
 
@@ -50,7 +38,7 @@ document.addEventListener("DOMContentLoaded", () => {
 			localStorage.setItem("parables", JSON.stringify(parables));
 
 			parableForm.reset();
-			showToast("✅ Притча добавлена!", "success");
+			toastr.success("✅ Притча добавлена!", "success");
 		});
 	}
 
@@ -188,7 +176,7 @@ document.addEventListener("DOMContentLoaded", () => {
 			})
 			.catch((error) => {
 				removePreloader();
-				showToast("⚠ Smth went wrong", "error");
+				toastr.error("⚠ Smth went wrong", "error");
 				console.error("Error fetching parables:", error);
 			});
 	}
